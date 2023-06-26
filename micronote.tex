@@ -1,0 +1,189 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%Compile with XeLaTeX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,openany,leqno]{e61note}
+
+\usepackage{lipsum} % This is just here to allow the filler text to be generated, feel free to remove for real notes
+
+\pagestyle{e61note}
+
+\renewcommand*{\bibfont}{\small}
+\addbibresource{references.bib}
+
+\begin{document}
+
+\baselineskip=14pt
+\emergencystretch=5pt
+\sloppy
+
+\title{EXAMPLE MICRONOTE! ~\newline A SAMPLE DOCUMENT FOR A MICRONOTE}
+\SubTitle{e61 MICRO NOTE | 26 June 2023}
+\author{Aaron Wong}
+
+\maketitle
+
+\begin{Boxx}
+\setstretch{1}
+\lipsum[][1-2]
+\begin{itemize}[noitemsep]
+    \item \lipsum[2][1]
+    \item \lipsum[3][1]
+\end{itemize}
+\end{Boxx}
+
+\lipsum[1] This is an example of a citation \parencite{Fitzgerald20,Ziffer20}.
+
+\lipsum[2]\footnote{\lipsum[3]}
+
+\begin{figure}[h]
+\caption{Rents and Distance to Capital City Centres*}
+\label{fig:bins}
+\includegraphics[scale=0.8]{rents dist cutoffs mpanel.pdf}\centering
+\end{figure}
+
+\lipsum[4] This is an example of a within-document location reference to Appendix \ref{app:regs}. 
+
+\lipsum[][1-3] (Figure \ref{fig:bins}B).
+
+\lipsum[][1] (Figure \ref{fig:dist_coefs}A). \lipsum[][2]
+
+\begin{figure}[h]
+\caption{Increase in Rents from a Halving of Distance*}
+\label{fig:dist_coefs}
+\includegraphics[scale=0.8]{rents gradient coefs mpanel.pdf}\centering
+\end{figure}
+
+\lipsum[6-8]
+
+\printbibliography[heading=subbibliography, title={References}]
+
+\appendix
+
+\chapter{EXAMPLE MICRONOTE! A SAMPLE DOCUMENT FOR A MICRONOTE}
+
+\section{Regression specification}\label{app:regs}
+
+\lipsum[1-2]
+
+The variables are defined as follows:
+\begin{itemize}
+    \item $\ln{value}$ \lipsum[][1]
+    \item $distance\ bins$ \lipsum[][3]
+    \item $bedrooms$, $bathrooms$, $carspaces$ \lipsum[][5]
+\end{itemize}
+
+\textbf{Within/outside capital city regression}
+
+\begin{equation}
+\label{eq:gcc_dummy}
+    \begin{aligned}
+        \ln{value_i} =\ &\alpha + \beta (within\ CC)_i + \gamma (near\ coastline)_i + \sum_{j=0}^5 \gamma_j (j\ bedrooms)_i + \sum_{k=0}^5 \delta_k (k\ bathrooms)_i \\ &+ 
+        \sum_{l=0}^5 \eta_l (l\ carspaces \times property\ type)_i + \theta (property\ type = House)_i + \epsilon_i
+    \end{aligned}
+\end{equation}
+
+\textbf{Binned distance regression}
+
+\begin{equation}
+\label{eq:bin}
+    \begin{aligned}
+        \ln{value_i} =\ &\alpha + \sum_{j=1}^{8} \beta_j(distance\ bins)_i + \gamma(coast\ distance)_i + \sum_{j=0}^5 \gamma_j (j\ bedrooms)_i + \sum_{k=0}^5 \delta_k (k\ bathrooms)_i \\ &+ 
+        \sum_{l=0}^5 \eta_l (l\ carspaces \times property\ type)_i + \theta (property\ type = House)_i + \epsilon_i
+    \end{aligned}
+\end{equation}
+
+\textbf{Distance with capital city boundary regression}
+
+\begin{equation}
+\label{eq:dist}
+    \begin{aligned}
+        \ln{value_i} =\ &\alpha + \beta_1(within\ CC)_i + \beta_2(within\ CC \times distance)i + \beta_3(outside\ CC \times distance)_i \\ &+ 
+        \delta_1(within\ CC \times coast\ distance)_i + \delta_2(outside\ CC \times coast\ distance)_i \\ &+ 
+        \sum_{j=0}^5 \gamma_j (j\ bedrooms)_i + \sum_{k=0}^5 \delta_k (k\ bathrooms)_i + 
+        \sum_{l=0}^5 \eta_l (l\ carspaces \times property\ type)_i \\ &+ \theta (property\ type = House)_i + \epsilon_i
+    \end{aligned}
+\end{equation}
+
+\FloatBarrier
+\section{Mean rent index}\label{app:rent-index}
+
+\lipsum[1]
+
+\begin{figure}[ht]
+  \centering
+  \caption{}\label{fig:rent-index}
+  \includegraphics[width=.4\textwidth]{mean rent index.pdf}
+\end{figure}
+
+\FloatBarrier
+\section{Results for property sales}
+
+\lipsum[1-2]
+
+\begin{figure}[ht]
+  \centering
+  \caption{}\label{fig:price_bins}
+  \includegraphics[width=.4\textwidth]{binned dist cc prices.pdf}
+\end{figure}
+
+\FloatBarrier
+\section{Additional coefficient graphs}
+
+\lipsum[1]
+
+\lipsum[2]
+
+\begin{figure}[htb]
+\centering
+\begin{minipage}{.35\textwidth}
+  \centering
+  \captionof{figure}{}
+  \includegraphics[width=\linewidth]{rent effect beds.pdf}
+  \label{fig:rent-bed}
+\end{minipage}
+\begin{minipage}{.35\textwidth}
+  \centering
+  \captionof{figure}{}
+  \includegraphics[width=\linewidth]{rent effect cars.pdf}
+  \label{fig:rent-car}
+\end{minipage}
+\end{figure}
+
+\FloatBarrier
+\section{Example of a table}
+
+\begin{table}[ht]
+\centering
+\caption{Selected coefficients from rent gradients regression}\label{tab:pre-post-regs}
+\begin{tabular}{lcc}
+\toprule
+  & Feb 2020 & Jun 2022\\
+\midrule
+Intercept & \num{6.724}*** & \num{5.073}***\\
+ & (\num{0.119}) & (\num{0.019})\\
+ln(city centre distance) (outside CC) & \num{-0.101}*** & \num{-0.102}***\\
+ & (\num{0.002}) & \vphantom{1} (\num{0.002})\\
+ln(city centre distance) (within CC) & \num{-0.139}*** & \num{-0.109}***\\
+ & (\num{0.002}) & (\num{0.002})\\
+Within CC = 1 & \num{0.063}*** & \num{-0.081}***\\
+ & (\num{0.010}) & (\num{0.011})\\
+ln(coast distance) (outside CC) & \num{-0.044}*** & \num{-0.044}***\\
+ & (\num{0.001}) & \vphantom{1} (\num{0.001})\\
+ln(coast distance) (within CC) & \num{-0.058}*** & \num{-0.073}***\\
+ & (\num{0.001}) & (\num{0.001})\\
+\midrule
+Num.Obs. & \num{65585} & \num{47277}\\
+R2 & \num{0.440} & \num{0.483}\\
+R2 Adj. & \num{0.440} & \num{0.483}\\
+AIC & \num{19202.7} & \num{7572.6}\\
+BIC & \num{19439.1} & \num{7809.2}\\
+RMSE & \num{0.28} & \num{0.26}\\
+Std.Errors & Heteroskedasticity-robust & Heteroskedasticity-robust\\
+\bottomrule
+\multicolumn{3}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\
+\end{tabular}
+\end{table}
+
+
+\end{document} 
