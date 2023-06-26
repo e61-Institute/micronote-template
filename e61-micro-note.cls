@@ -74,6 +74,12 @@ font={bf,footnotesize},justification=centering,belowskip=0pt,aboveskip=6pt}
 \parindent=0pt
 \parskip=6pt plus 2pt minus 2pt
 
+\AtBeginDocument{%
+  % Adjust equation spacing
+  \addtolength\abovedisplayskip{-1\baselineskip}
+  \addtolength\belowdisplayskip{-1\baselineskip}
+}
+
 \RequirePackage{mdframed}
 \mdfdefinestyle{box1}{%
     linecolor=black,
