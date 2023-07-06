@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{e61note}
+\ProvidesClass{e61-micronote}
           [2023/05/22 v1 e61 Micro Note]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
@@ -131,7 +131,7 @@ label=\raisebox{-0.4\height}{\scalebox{2.2}{\color{green1}\textbullet}}}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
-\titleformat{\chapter}[display]{\thispagestyle{e61note}\raggedright\color{green1}}{}{0pt}%
+\titleformat{\chapter}[display]{\thispagestyle{e61-micronote}\raggedright\color{green1}}{}{0pt}%
 {\fontsize{25}{32}\selectfont#1~\thechapter}[]
 \renewcommand\thechapter{}
 
@@ -258,7 +258,7 @@ at($(STIT.south west)!0.5!(AUT.north west)$)
 
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
-\fancypagestyle{e61note}{%
+\fancypagestyle{e61-micronote}{%
 \renewcommand{\headrulewidth}{0pt}
   \fancyhf{}%
 %
