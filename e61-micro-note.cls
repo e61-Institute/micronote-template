@@ -46,6 +46,7 @@ input-symbols		= ( ) [ ] - + *,
 \RequirePackage{microtype}
 \RequirePackage{placeins}
 \RequirePackage{amsmath}
+\RequirePackage{setspace}
 
 \RequirePackage[backend=biber,natbib=true,style=apa,]{biblatex}
 \setlength\bibitemsep{0.33\baselineskip}
