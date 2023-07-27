@@ -81,16 +81,6 @@ font={bf,footnotesize},justification=centering,belowskip=0pt,aboveskip=6pt}
   \addtolength\belowdisplayskip{-1\baselineskip}
 }
 
-% Fix for misaligned \neq symbol in the font used in equations in this template
-\makeatletter
-\newcommand{\neg@te}[2]{%
-  \vphantom{/#2}%
-  \ooalign{\hidewidth$\m@th#1/$\hidewidth\cr$\m@th#1#2$}%
-}
-\DeclareRobustCommand{\neq}{\mathrel{\mathpalette\neg@te{=}}}
-\RenewCommandCopy{\neq}{\neq}
-\makeatother
-
 \RequirePackage{mdframed}
 \mdfdefinestyle{box1}{%
     linecolor=black,
