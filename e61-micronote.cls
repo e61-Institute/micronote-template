@@ -25,7 +25,7 @@ ItalicFont    =PTSans-Italic.ttf]
 
 \newfontfamily{\Bebas}{BebasNeue Bold.ttf}[Path=./fonts/]
 \newfontfamily{\Author}{PTSans-Bold.ttf}[Path=./fonts/,LetterSpace=15]
-\newfontfamily{\Caption}{Arial}
+\newfontfamily{\Caption}{PTSans-Regular}
 
 \RequirePackage[english]{babel}
 %
