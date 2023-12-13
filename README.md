@@ -6,7 +6,7 @@ If you are looking for the research note template, click [here](https://github.c
 
 ## How to load the template into your Overleaf
 
-1. Download a copy of the template from Github by clicking on the green "Code" button, then "Download ZIP".
+1. Download a copy of the template by clicking [here](https://github.com/e61-Institute/micronote-template/zipball/master) (or by clicking on the green "Code" button, then "Download ZIP").
 2. On the [Overleaf website](https://www.overleaf.com/project), click on "New Project", then "Upload Project".
 3. Drag and drop the downloaded Zip file as per the instructions.
 4. Change the LaTeX compiler to XeLaTeX, otherwise nothing will compile: click on "Menu" in the top-left corner, go to the "Settings" section, click the drop-down box next to "Compiler", select "XeLaTeX".
